@@ -1,1 +1,73 @@
-a
+账号：11010100760127  密码kpf43p   badou2015
+8543709200 放大模块
+8536901100 射频连接器
+8543904000 高、中频放大器用零件，通用于信号放大模块  信号放大单元模组 适用于无牌FSLK-001雷达发射机中信号放大单元
+8541500000 其他半导体元件，由多个半导体元件构成
+
+cd C:\Program Files (x86)\Google\Chrome\Application
+chrome.exe --remote-debugging-port=92222
+
+
+
+IDEA sn: AF0XX4JT0D
+
+
+
+
+select distinct model from orders where out_price>2 and model not in (select distinct model from model_stock)
+
+mini_part 表生成part_true
+update mini_parts set part_true=replace(concat(part,'+'),'++','+')
+
+然后再distinct part_true，这是mini全部有效型号
+select distinct part_true,1920 as qty, '' as pack, '19+' as DC,'MINI' as mfg, '2周而已专做MINI' as remark,'' as stock from mini_parts
+
+stock有效料号
+select distinct model,1920 as qty, '' as pack, '19+' as DC,'' as mfg, '现货库存' as remark,'' as stock from model_stock
+
+大库存：现货库存 + 去掉现货型号的mini型号（订货料）
+select distinct model,1920 as qty, '' as pack, '19+' as DC,'' as mfg, '现货库存' as remark,'' as stock from model_stock
+UNION
+select distinct part_true as model,1920 as qty, '' as pack, '19+' as DC,'MINI' as mfg, '订货2周' as remark,'' as stock from mini_parts where
+part_true not in(select distinct model from model_stock )
+
+1 500条现货+200条热卖：选择数量大于4，或者备注有现货得。根据时间排序，最近卖出得700条。
+选500条现货
+select  distinct model,2180 as qty, '' as pack, '19+' as DC,'' as mfg, '现货库存' as remark,'' as stock from model_stock where qty>4 or position like '%现货%' order by sale_reason_SZ desc,sale_reason_BJ desc,updated_at desc limit 500
+
+200条热卖
+select  distinct model,2180 as qty, '' as pack, '19+' as DC,'' as mfg, '现货库存' as remark,'' as stock from model_stock where qty>4 or position like '%现货%' order by sale_reason_SZ desc,sale_reason_BJ desc,updated_at desc limit 500,200
+
+2 500条现货+200条热卖：选择数量大于50，取消备注有现货得。根据时间排序，最近卖出得700条。
+选500条现货
+select  distinct model,2180 as qty, '' as pack, '19+' as DC,'' as mfg, '现货库存' as remark,'' as stock from model_stock where qty>50 order by sale_reason_SZ desc,sale_reason_BJ desc,updated_at desc limit 500
+
+200条热卖
+select  distinct model,2180 as qty, '' as pack, '19+' as DC,'' as mfg, '现货库存' as remark,'' as stock from model_stock where qty>50 order by sale_reason_SZ desc,sale_reason_BJ desc,updated_at desc limit 500,200
+
+
+select * from orders where ordered=1 and model='TCM2-43X+' order by created_at desc limit 1
+
+
+6月业绩119844-13920（5月已发提成但是取消了订单）= 1059
+7月业绩54463= 545
+
+Pyinstaller -F -w -i tubiao.ico HS-documents.py
+
+人的思想是如何进步的？
+
+随着时间阅历的增加，思想会逐渐走向全面和成熟，这就是思想进步的表现。那思想进步是如何实现的？
+
+有两种方式。
+一是接受别人的观点。注意，这个方式的核心是观点是现成的，跟自己的感觉吻合，于是自然不必追究观点的推理过程，而直接把这个观点全盘接受了。虽然接受了这个观点，并不意味着这个观点成为我们认知的一部分。
+
+自己的观点是以自己的认知为基础的。
+拿来的别人的观点，必须经过一个过程，才成为我们的认知。这个过程就是用自己的认知，来重新归纳证明这个观点。论证过程可以是原作者的，也可以是我们自己的。当重复多次以后，这个观点就成了我们认知的一部分，从而我们的思想就进步了。
+
+这个重新论证的过程，如果没有进行，或者原作者的论证超出了我们可以论证的范围，则这个观点虽然知晓，但是成不了自己认知的一部分。也就是思想没有进步。
+
+或者虽然不经过自己认知的重复论证，而是这个观点一直不断的重复出现，则也可以构成我们的认知。比如证券公司的清
+
+
+
+
